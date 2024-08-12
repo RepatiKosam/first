@@ -1,2 +1,6 @@
-let names = window.prompt("What's your name?");
-document.getElementById("username").textContent = `Hello ${names} !`;
+let username = localStorage.getItem("username");
+if(!username){
+    username = window.prompt();
+    localStorage.setItem("username",username); 
+}
+document.getElementById("result").textContent = `Hello ${username} !`;
